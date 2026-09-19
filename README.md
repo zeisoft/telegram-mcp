@@ -1,43 +1,25 @@
-# Telegram MCP server — through HeyMetra
+<div align="center">
 
-> **Unofficial.** This is not Telegram's own MCP server and this repository is not affiliated with, endorsed by or supported by Telegram. It documents how [HeyMetra](https://heymetra.com/), a remote MCP server built by Zeisoft, reads Telegram.
+<img src="assets/cover.png" alt="Telegram through HeyMetra's MCP server" width="100%">
+
+# Telegram &times; HeyMetra
 
 **Link a Telegram chat to your workspace.**
+
+An answer nobody reads is not an answer. Have it delivered to Telegram, where the team already is.
 
 [![MCP Registry](https://img.shields.io/badge/MCP_Registry-com.heymetra%2Fheymetra-1f6feb)](https://registry.modelcontextprotocol.io/v0/servers/com.heymetra%2Fheymetra/versions)
 [![Transport](https://img.shields.io/badge/transport-Streamable_HTTP-444)](https://modelcontextprotocol.io/)
 [![Auth](https://img.shields.io/badge/auth-OAuth_2.1-444)](https://heymetra.com/security/)
 [![Connector page](https://img.shields.io/badge/heymetra.com-telegram-1f6feb)](https://heymetra.com/connectors/telegram/)
 
+```
+https://mcp.heymetra.com/mcp
+```
+
+</div>
+
 ---
-
-## What Telegram is
-
-Telegram is a channel you own: HeyMetra reaches you through a bot you create, in the chat you link it to.
-
-## What HeyMetra reads from Telegram
-
-Connect your own bot and press Start to link the chat, then send a test message from HeyMetra to confirm it arrives. After that, your assistant can send to that same chat — it shows you the exact text first and nothing is sent until you approve it. Whoever is in that chat sees it, and a sent message cannot be recalled. Nothing is ever read from Telegram.
-
-## Permissions
-
-You switch these on per connection, and a permission you leave off is a tool your assistant never sees.
-
-| Permission | What it covers | Changes anything? |
-|---|---|---|
-| **Send messages** | Let your assistant send to this chat, with your approval each time. Turn it off and only the test button can reach it. | Yes — every change waits for your approval |
-
-<details>
-<summary>What each permission lets an assistant do, in full</summary>
-
-- Send a message to the linked Telegram chat — proposed first, with the exact text, and sent only once you approve. It cannot be recalled.
-</details>
-
-## What it can change
-
-- Send a message to the linked Telegram chat — proposed first, with the exact text, and sent only once you approve. It cannot be recalled.
-
-A tool that would change something returns the change for a person to approve instead of running it, inside bounds that live in code rather than in a prompt: at most 20 messages a rolling day, counted separately from account changes, and an approval that expires after 30 minutes. [How that works](https://heymetra.com/security/).
 
 ## Connect Telegram
 
@@ -150,9 +132,37 @@ _The key is serverUrl, not url — the one every other JSON client spells differ
 Full walkthrough: [heymetra.com/mcp/antigravity/](https://heymetra.com/mcp/antigravity/)
 </details>
 
-## Everything else HeyMetra reads
+## What it may and may not touch
 
-One connection answers across accounts — which is the point, because spend lives in one place and revenue in another:
+Send a message to the linked Telegram chat — proposed first, with the exact text, and sent only once you approve. It cannot be recalled.
+
+Permissions are switched on per connection, and one you leave off is a tool your assistant never sees.
+
+| Permission | What it covers | Changes anything? |
+|---|---|---|
+| **Send messages** | Let your assistant send to this chat, with your approval each time. Turn it off and only the test button can reach it. | Yes — every change waits for your approval |
+
+<details>
+<summary>What each permission lets an assistant do, in full</summary>
+
+- Send a message to the linked Telegram chat — proposed first, with the exact text, and sent only once you approve. It cannot be recalled.
+</details>
+
+Anything that would change something comes back as a proposal you approve, inside bounds that live in code rather than in a prompt: at most 20 messages a rolling day, counted separately from account changes, and an approval that expires after 30 minutes. [How that works](https://heymetra.com/security/).
+
+## What HeyMetra reads from Telegram
+
+Connect your own bot and press Start to link the chat, then send a test message from HeyMetra to confirm it arrives. After that, your assistant can send to that same chat — it shows you the exact text first and nothing is sent until you approve it. Whoever is in that chat sees it, and a sent message cannot be recalled. Nothing is ever read from Telegram.
+
+<details>
+<summary>About Telegram</summary>
+
+Telegram is a channel you own: HeyMetra reaches you through a bot you create, in the chat you link it to.
+</details>
+
+## One connection, not seven
+
+The reason to read Telegram through HeyMetra rather than through a server that only knows Telegram is everything else it can answer in the same breath:
 
 **Ads** — [Google Ads](https://heymetra.com/connectors/google-ads/) · [Meta](https://heymetra.com/connectors/meta-ads/)
 
@@ -166,17 +176,17 @@ One connection answers across accounts — which is the point, because spend liv
 
 **Channels** — [Slack](https://github.com/zeisoft/slack-mcp) · **Telegram**
 
-The full catalogue, with what each one can do today, is at [heymetra.com/connectors/](https://heymetra.com/connectors/).
+The full catalogue is at [heymetra.com/connectors/](https://heymetra.com/connectors/).
 
 ## Links
 
-- [Telegram connector page](https://heymetra.com/connectors/telegram/) — the source this page is generated from
+- [Telegram connector page](https://heymetra.com/connectors/telegram/)
 - [HeyMetra](https://heymetra.com/) — what the product is
-- [Setup per assistant](https://heymetra.com/mcp/) — eight clients, step by step
+- [Setup for every assistant](https://heymetra.com/mcp/)
 - [Security and limits](https://heymetra.com/security/)
-- [Pricing](https://heymetra.com/pricing/) — paid, no free plan and no trial
+- [Pricing](https://heymetra.com/pricing/)
 - [HeyMetra's own repository](https://github.com/zeisoft/heymetra-mcp)
 
 ---
 
-<sub>This README is generated from HeyMetra's live connector catalogue and refreshed daily; it is committed only when something in it actually changed. Corrections are welcome as issues. Built by <a href="https://zeisoft.com">Zeisoft</a>.</sub>
+<sub>Built by <a href="https://zeisoft.com">Zeisoft</a>, who make HeyMetra. Not affiliated with Telegram. This README is generated from HeyMetra's live connector catalogue and refreshed daily; corrections are welcome as issues.</sub>
