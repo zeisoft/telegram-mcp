@@ -23,9 +23,35 @@ https://mcp.heymetra.com/mcp
 
 ## Connect Telegram
 
-1. Create a bot with @BotFather in Telegram and copy the token it gives you.
-2. Paste the token here, then open your new bot and press Start — that private chat is now linked.
-3. Send the test message from HeyMetra to confirm the link works.
+**1. Create a bot with @BotFather**
+
+In Telegram, open a chat with @BotFather and send /newbot. It asks for a display name and then a username, which must end in 'bot'. It replies with the token.
+
+> The bot is yours, not HeyMetra's. It lives in your Telegram account, you can rename or delete it at any time, and deleting it is how you cut this connection off at the source.
+
+**2. Copy the token and paste it into HeyMetra**
+
+One line: digits, a colon, then letters and digits. Choose Telegram on the Connections screen and paste it. Saving checks it against Telegram immediately and shows you which bot answered.
+
+> Anyone holding this token can post as your bot, so treat it like a password. If it leaks, /revoke in BotFather issues a new one and kills the old — you then paste the new one here.
+
+**3. Open the link HeyMetra gives you and press Start**
+
+The token proves which BOT will send; it does not say which CHAT to send to. HeyMetra hands you a one-time link to your own bot. Open it, press Start, and the chat it opens is the one messages arrive in.
+
+> This step cannot be skipped and cannot be done from our side: Telegram does not let a bot message somebody who has never written to it. The link is good for fifteen minutes and can be used once.
+
+**4. Send the test message**
+
+From the Connections screen. It proves the whole path — token, bot, chat — rather than just the token, and it is the only step that does.
+
+**5. Add HeyMetra to the assistant you use**
+
+Claude, ChatGPT, Cursor or Codex. Your assistant can then send to this chat — it shows you the exact text first and nothing goes until you approve it.
+
+Watch what you paste:
+
+- Anything starting `@` is **that is the bot's username, not its token. The token is the long line BotFather sent you, digits then a colon then letters.** and will be refused by name.
 
 ## Then add HeyMetra to your assistant
 
@@ -159,6 +185,44 @@ Permissions are switched on per connection, and one you leave off is a tool your
 </details>
 
 Anything that would change something comes back as a proposal you approve, inside bounds that live in code rather than in a prompt: at most 20 messages a rolling day, counted separately from account changes, and an approval that expires after 30 minutes. [How that works](https://heymetra.com/security/).
+
+## When something goes wrong
+
+<details>
+<summary>Saving fails and says Telegram rejected the token.</summary>
+
+**Why:** Usually the bot's username was pasted instead of its token, or the token was revoked in BotFather after being copied. Telegram answers 404 for a malformed token and 401 for a revoked one; both mean the same thing here.
+
+**Fix:** Send /token to @BotFather and pick the bot. It shows the current token, which is the long line with a colon in it.
+
+</details>
+
+<details>
+<summary>The token saved, but the test message never arrives and nothing says why.</summary>
+
+**Why:** The Start step has not happened. A bot cannot open a conversation in Telegram — the person has to write to it first — so until Start arrives there is no chat to deliver to.
+
+**Fix:** Open the link from the Connections screen again and press Start. Ask for a fresh link if more than fifteen minutes have passed.
+
+</details>
+
+<details>
+<summary>The link opens Telegram but nothing seems to happen.</summary>
+
+**Why:** The link carries a one-time code, and it is consumed the first time it is opened. Opening the same one twice does nothing the second time.
+
+**Fix:** Ask for a new link on the Connections screen.
+
+</details>
+
+<details>
+<summary>Messages arrive for one person, and a colleague wants them too.</summary>
+
+**Why:** The link is redeemed by whoever opens it, so the chat belongs to that person. It is a private chat between them and the bot.
+
+**Fix:** Have the colleague open their own link from their own HeyMetra account. A Telegram connection carries one chat, so a second person is a second link rather than a shared one.
+
+</details>
 
 ## What HeyMetra reads from Telegram
 
