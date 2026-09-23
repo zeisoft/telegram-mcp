@@ -231,12 +231,14 @@ Anything that would change something comes back as a proposal you approve, insid
 
 ## What HeyMetra reads from Telegram
 
-Connect your own bot and press Start to link the chat, then send a test message from HeyMetra to confirm it arrives. After that, your assistant can send to that same chat — it shows you the exact text first and nothing is sent until you approve it. Whoever is in that chat sees it, and a sent message cannot be recalled. Nothing is ever read from Telegram.
+Connect your own bot and press Start to link the chat, then send a test message from HeyMetra to confirm it arrives. After that, your assistant can send to that same chat — it shows you the exact text first and nothing is sent until you approve it. Whoever is in that chat sees it, and a sent message cannot be recalled. A bot token reaches Telegram's own API, so your assistant can ask it things as well as send — but a bot sees only what is addressed to it, which here is the one chat you linked.
 
 <details>
 <summary>About Telegram</summary>
 
-Telegram is a channel you own: HeyMetra reaches you through a bot you create, in the chat you link it to.
+Telegram is a channel you own outright. HeyMetra does not have an app you install — you create a bot in BotFather, in your own account, and hand us its token. Nothing about it belongs to us: revoke the token and the connection is over the same second, with nothing to ask us for.
+
+What it reaches is one conversation: the chat you open with the bot by pressing Start. A Telegram bot sees only what is addressed to it, so there is no surface here that could wander into somebody else's messages. Groups and channels are a different mechanism and this connector does not do them — one bot, one chat, on purpose.
 </details>
 
 ## One connection, not seven
@@ -245,13 +247,15 @@ The reason to read Telegram through HeyMetra rather than through a server that o
 
 **Ads** — [Google Ads](https://heymetra.com/connectors/google-ads/) · [Meta](https://heymetra.com/connectors/meta-ads/)
 
-**Analytics** — [Google Analytics 4](https://heymetra.com/connectors/google-analytics-4/) · [Google Search Console](https://github.com/zeisoft/google-search-console-mcp)
+**Analytics** — [Google Analytics 4](https://heymetra.com/connectors/google-analytics-4/) · [Google Search Console](https://github.com/zeisoft/google-search-console-mcp) · [PostHog](https://github.com/zeisoft/posthog-mcp)
 
 **Ecommerce** — [Shopify](https://heymetra.com/connectors/shopify/) · [Trendyol](https://github.com/zeisoft/trendyol-mcp) · [WooCommerce](https://github.com/zeisoft/woocommerce-mcp)
 
 **Revenue & CRM** — [Stripe](https://heymetra.com/connectors/stripe/) · [HubSpot](https://heymetra.com/connectors/hubspot/) · [Zoho CRM](https://github.com/zeisoft/zoho-crm-mcp) · [Zoho SalesIQ](https://github.com/zeisoft/zoho-salesiq-mcp) · [Zoho Marketing Automation](https://github.com/zeisoft/zoho-marketing-automation-mcp)
 
 **Mobile** — [AppsFlyer](https://github.com/zeisoft/appsflyer-mcp) · [RevenueCat](https://heymetra.com/connectors/revenuecat/) · [Adapty](https://github.com/zeisoft/adapty-mcp) · [App Store Connect](https://github.com/zeisoft/app-store-connect-mcp)
+
+**Work** — [Google Calendar](https://heymetra.com/connectors/google-calendar/) · [Google Meet](https://heymetra.com/connectors/google-meet/) · [Jira](https://github.com/zeisoft/jira-mcp)
 
 **Channels** — [Slack](https://github.com/zeisoft/slack-mcp) · **Telegram**
 
