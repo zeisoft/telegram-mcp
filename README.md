@@ -33,7 +33,7 @@ In Telegram, open a chat with @BotFather and send /newbot. It asks for a display
 
 One line: digits, a colon, then letters and digits. Choose Telegram on the Connections screen and paste it. Saving checks it against Telegram immediately and shows you which bot answered.
 
-> Anyone holding this token can post as your bot, so treat it like a password. If it leaks, /revoke in BotFather issues a new one and kills the old — you then paste the new one here.
+> Anyone holding this token can post as your bot, so treat it like a password. If it leaks, /revoke in BotFather issues a new one and cancels the old; then paste the new one here.
 
 **3. Open the link HeyMetra gives you and press Start**
 
@@ -43,11 +43,11 @@ The token proves which BOT will send; it does not say which CHAT to send to. Hey
 
 **4. Send the test message**
 
-From the Connections screen. It proves the whole path — token, bot, chat — rather than just the token, and it is the only step that does.
+From the Connections screen. It proves the whole path (token, bot and chat) rather than just the token, and it is the only step that does.
 
 **5. Add HeyMetra to the assistant you use**
 
-Claude, ChatGPT, Cursor or Codex. Your assistant can then send to this chat — it shows you the exact text first and nothing goes until you approve it.
+Claude, ChatGPT, Cursor or Codex. Your assistant can then send to this chat. It shows you the exact text first and nothing goes until you approve it.
 
 Watch what you paste:
 
@@ -86,7 +86,7 @@ Full walkthrough: [heymetra.com/mcp/claude/](https://heymetra.com/mcp/claude/)
 
 Paste the address above into Settings → Security and login → Developer mode, then chatgpt.com/plugins.
 
-_The endpoint has to include its /mcp path here._
+_The address has to end in /mcp here._
 
 Full walkthrough: [heymetra.com/mcp/chatgpt/](https://heymetra.com/mcp/chatgpt/)
 </details>
@@ -147,7 +147,7 @@ Full walkthrough: [heymetra.com/mcp/codex/](https://heymetra.com/mcp/codex/)
 }
 ```
 
-_Leave the static OAuth fields empty — they exist for servers that cannot register themselves._
+_Leave the static OAuth fields empty; HeyMetra does not need them._
 
 Full walkthrough: [heymetra.com/mcp/cursor/](https://heymetra.com/mcp/cursor/)
 </details>
@@ -163,30 +163,30 @@ Full walkthrough: [heymetra.com/mcp/cursor/](https://heymetra.com/mcp/cursor/)
 }
 ```
 
-_The key is serverUrl, not url — the one every other JSON client spells differently._
+_The key is serverUrl, not url, unlike every other JSON client._
 
 Full walkthrough: [heymetra.com/mcp/antigravity/](https://heymetra.com/mcp/antigravity/)
 </details>
 
 ## What it may and may not touch
 
-Send a message to the linked Telegram chat — proposed first, with the exact text, and sent only once you approve. It cannot be recalled.
+Send a message to the linked Telegram chat. You see the exact text first, and it is sent only once you approve. It cannot be recalled.
 
-Propose a change through this account's own API, for operations HeyMetra does not cover. Nothing is sent until you approve it, and HeyMetra cannot undo it afterwards.
+Propose a change to this account. Nothing is sent until you approve it, and HeyMetra cannot undo it afterwards.
 
 Permissions are switched on per connection, and one you leave off is a tool your assistant never sees.
 
 | Permission | What it covers | Changes anything? |
 |---|---|---|
 | **Send messages** | Let your assistant send to this chat, with your approval each time. Turn it off and only the test button can reach it. | Yes — every change waits for your approval |
-| **Direct API access** | Let your assistant use this account's own API for anything HeyMetra's other operations do not cover. It reads directly, and what comes back is the provider's own answer rather than a figure HeyMetra has checked. It can also propose changes — those are never applied until you approve them, and HeyMetra cannot undo one afterwards. | Yes — every change waits for your approval |
+| **Full account access** | Lets your assistant read anything in this account to answer your questions. The figures are the provider's own, not ones HeyMetra has checked. It can also propose changes: none is applied until you approve it, and HeyMetra cannot undo one afterwards. | Yes — every change waits for your approval |
 
 <details>
 <summary>What each permission lets an assistant do, in full</summary>
 
-- Send a message to the linked Telegram chat — proposed first, with the exact text, and sent only once you approve. It cannot be recalled.
-- Ask this account's own API a question HeyMetra's other operations do not cover. Reads only, and the answer is the provider's own rather than a figure HeyMetra has checked.
-- Propose a change through this account's own API, for operations HeyMetra does not cover. Nothing is sent until you approve it, and HeyMetra cannot undo it afterwards.
+- Send a message to the linked Telegram chat. You see the exact text first, and it is sent only once you approve. It cannot be recalled.
+- Ask anything about this account and get the answer from its live data. Reads only, and the figures are the provider's own rather than ones HeyMetra has checked.
+- Propose a change to this account. Nothing is sent until you approve it, and HeyMetra cannot undo it afterwards.
 </details>
 
 Anything that would change something comes back as a proposal you approve, inside bounds that live in code rather than in a prompt: at most 20 messages a rolling day, counted separately from account changes, and an approval that expires after 30 minutes. [How that works](https://heymetra.com/security/).
@@ -205,7 +205,7 @@ Anything that would change something comes back as a proposal you approve, insid
 <details>
 <summary>The token saved, but the test message never arrives and nothing says why.</summary>
 
-**Why:** The Start step has not happened. A bot cannot open a conversation in Telegram — the person has to write to it first — so until Start arrives there is no chat to deliver to.
+**Why:** The Start step has not happened. A bot cannot open a conversation in Telegram; the person has to write to it first. Until Start arrives there is no chat to deliver to.
 
 **Fix:** Open the link from the Connections screen again and press Start. Ask for a fresh link if more than fifteen minutes have passed.
 
@@ -231,14 +231,14 @@ Anything that would change something comes back as a proposal you approve, insid
 
 ## What HeyMetra reads from Telegram
 
-Connect your own bot and press Start to link the chat, then send a test message from HeyMetra to confirm it arrives. After that, your assistant can send to that same chat — it shows you the exact text first and nothing is sent until you approve it. Whoever is in that chat sees it, and a sent message cannot be recalled. A bot token reaches Telegram's own API, so your assistant can ask it things as well as send — but a bot sees only what is addressed to it, which here is the one chat you linked.
+Connect your own bot and press Start to link the chat, then send a test message from HeyMetra to confirm it arrives. After that, your assistant can send to that same chat. It shows you the exact text first and nothing is sent until you approve it. Whoever is in that chat sees it, and a sent message cannot be recalled. Your assistant can also ask the bot about that chat, and the bot sees only what is addressed to it: the one chat you linked.
 
 <details>
 <summary>About Telegram</summary>
 
-Telegram is a channel you own outright. HeyMetra does not have an app you install — you create a bot in BotFather, in your own account, and hand us its token. Nothing about it belongs to us: revoke the token and the connection is over the same second, with nothing to ask us for.
+Telegram is a channel you own outright. There is no HeyMetra app to install: you create a bot in BotFather, in your own account, and give HeyMetra its token. Nothing about it belongs to us. Revoke the token and the connection is over the same second, with nothing to ask us for.
 
-What it reaches is one conversation: the chat you open with the bot by pressing Start. A Telegram bot sees only what is addressed to it, so there is no surface here that could wander into somebody else's messages. Groups and channels are a different mechanism and this connector does not do them — one bot, one chat, on purpose.
+What it reaches is one conversation: the chat you open with the bot by pressing Start. A Telegram bot sees only what is addressed to it, so it cannot wander into somebody else's messages. Groups and channels are not supported: one bot, one chat, on purpose.
 </details>
 
 ## One connection, not seven
