@@ -47,7 +47,7 @@ From the Connections screen. It proves the whole path (token, bot and chat) rath
 
 **5. Add HeyMetra to the assistant you use**
 
-Claude, ChatGPT, Cursor or Codex. Your assistant can then send to this chat. It shows you the exact text first and nothing goes until you approve it.
+Claude, ChatGPT, Cursor or Codex. Your assistant can then send to this chat. To approve each message first, switch on Ask before sending on the connection.
 
 Watch what you paste:
 
@@ -170,7 +170,7 @@ Full walkthrough: [heymetra.com/mcp/antigravity/](https://heymetra.com/mcp/antig
 
 ## What it may and may not touch
 
-Send a message to the linked Telegram chat. You see the exact text first, and it is sent only once you approve. It cannot be recalled.
+Send a message to the linked Telegram chat. It cannot be recalled. Switch on Ask before sending to approve each one first.
 
 Propose a change to this account. Nothing is sent until you approve it, and HeyMetra cannot undo it afterwards.
 
@@ -178,13 +178,13 @@ Permissions are switched on per connection, and one you leave off is a tool your
 
 | Permission | What it covers | Changes anything? |
 |---|---|---|
-| **Send messages** | Let your assistant send to this chat, with your approval each time. Turn it off and only the test button can reach it. | Yes — every change waits for your approval |
+| **Send messages** | Let your assistant send to this chat. Turn it off and only the test button can reach it. | Yes — every change waits for your approval |
 | **Full account access** | Lets your assistant read anything in this account to answer your questions. The figures are the provider's own, not ones HeyMetra has checked. It can also propose changes: none is applied until you approve it, and HeyMetra cannot undo one afterwards. | Yes — every change waits for your approval |
 
 <details>
 <summary>What each permission lets an assistant do, in full</summary>
 
-- Send a message to the linked Telegram chat. You see the exact text first, and it is sent only once you approve. It cannot be recalled.
+- Send a message to the linked Telegram chat. It cannot be recalled. Switch on Ask before sending to approve each one first.
 - Ask anything about this account and get the answer from its live data. Reads only, and the figures are the provider's own rather than ones HeyMetra has checked.
 - Propose a change to this account. Nothing is sent until you approve it, and HeyMetra cannot undo it afterwards.
 </details>
@@ -231,7 +231,7 @@ Anything that would change something comes back as a proposal you approve, insid
 
 ## What HeyMetra reads from Telegram
 
-Connect your own bot and press Start to link the chat, then send a test message from HeyMetra to confirm it arrives. After that, your assistant can send to that same chat. It shows you the exact text first and nothing is sent until you approve it. Whoever is in that chat sees it, and a sent message cannot be recalled. Your assistant can also ask the bot about that chat, and the bot sees only what is addressed to it: the one chat you linked.
+Connect your own bot and press Start to link the chat, then send a test message from HeyMetra to confirm it arrives. After that, your assistant can send to that same chat. To see each message first, switch on Ask before sending for this connection. Whoever is in that chat sees it, and a sent message cannot be recalled. Your assistant can also ask the bot about that chat, and the bot sees only what is addressed to it: the one chat you linked.
 
 <details>
 <summary>About Telegram</summary>
@@ -249,13 +249,13 @@ The reason to read Telegram through HeyMetra rather than through a server that o
 
 **Analytics** — [Google Analytics 4](https://heymetra.com/connectors/google-analytics-4/) · [Google Search Console](https://github.com/zeisoft/google-search-console-mcp) · [PostHog](https://github.com/zeisoft/posthog-mcp)
 
-**Ecommerce** — [Shopify](https://heymetra.com/connectors/shopify/) · [Trendyol](https://github.com/zeisoft/trendyol-mcp) · [WooCommerce](https://github.com/zeisoft/woocommerce-mcp)
+**Ecommerce** — [Shopify](https://heymetra.com/connectors/shopify/) · [Trendyol](https://github.com/zeisoft/trendyol-mcp) · [Hepsiburada](https://heymetra.com/connectors/hepsiburada/) · [n11](https://github.com/zeisoft/n11-mcp) · [Çiçeksepeti](https://github.com/zeisoft/ciceksepeti-mcp) · [Amazon Seller Central](https://github.com/zeisoft/amazon-seller-central-mcp) · [ikas](https://heymetra.com/connectors/ikas/) · [WooCommerce](https://github.com/zeisoft/woocommerce-mcp)
 
 **Revenue & CRM** — [Stripe](https://github.com/zeisoft/stripe-mcp) · [HubSpot](https://heymetra.com/connectors/hubspot/) · [Zoho CRM](https://github.com/zeisoft/zoho-crm-mcp) · [Zoho SalesIQ](https://github.com/zeisoft/zoho-salesiq-mcp) · [Zoho Marketing Automation](https://github.com/zeisoft/zoho-marketing-automation-mcp)
 
 **Mobile** — [AppsFlyer](https://github.com/zeisoft/appsflyer-mcp) · [RevenueCat](https://github.com/zeisoft/revenuecat-mcp) · [Adapty](https://github.com/zeisoft/adapty-mcp) · [App Store Connect](https://github.com/zeisoft/app-store-connect-mcp)
 
-**Work** — [Google Calendar](https://heymetra.com/connectors/google-calendar/) · [Google Meet](https://heymetra.com/connectors/google-meet/) · [Jira](https://github.com/zeisoft/jira-mcp)
+**Work** — [Jira](https://github.com/zeisoft/jira-mcp)
 
 **Channels** — [Slack](https://github.com/zeisoft/slack-mcp) · **Telegram**
 
