@@ -231,7 +231,7 @@ It sends at most 20 messages a rolling day, counted separately from account chan
 
 </details>
 
-## What HeyMetra reads from Telegram
+## What HeyMetra does with Telegram
 
 Connect your own bot and press Start to link the chat, then send a test message from HeyMetra to confirm it arrives. After that, your assistant can send to that same chat. To see each message first, switch on Ask before sending for this connection. Whoever is in that chat sees it, and a sent message cannot be recalled. Your assistant can also ask the bot about that chat, and the bot sees only what is addressed to it: the one chat you linked.
 
@@ -245,7 +245,7 @@ What it reaches is one conversation: the chat you open with the bot by pressing 
 
 ## One connection, not seven
 
-The reason to read Telegram through HeyMetra rather than through a server that only knows Telegram is everything else it can answer in the same breath:
+The reason to send to Telegram through HeyMetra rather than through a server that only knows Telegram is everything the answer can draw on before it is sent:
 
 **Ads** — [Google Ads](https://github.com/zeisoft/google-ads-mcp)
 
