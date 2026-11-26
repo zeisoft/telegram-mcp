@@ -247,7 +247,7 @@ What it reaches is one conversation: the chat you open with the bot by pressing 
 
 The reason to send to Telegram through HeyMetra rather than through a server that only knows Telegram is everything the answer can draw on before it is sent:
 
-**Ads** — [Google Ads](https://github.com/zeisoft/google-ads-mcp)
+**Ads** — [Google Ads](https://github.com/zeisoft/google-ads-mcp) · [Meta](https://github.com/zeisoft/meta-ads-mcp)
 
 **Analytics** — [Google Analytics 4](https://github.com/zeisoft/google-analytics-4-mcp) · [Google Search Console](https://github.com/zeisoft/google-search-console-mcp) · [PostHog](https://github.com/zeisoft/posthog-mcp)
 
